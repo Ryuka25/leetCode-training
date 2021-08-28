@@ -104,18 +104,35 @@ def question5():
     result = U(1)
     print(result)
 
-# def question6():
+def question6():
 
-#     #
+    # Ecrire un algorithme pour calculer la suite de Fibonacci:
+    # 𝑈 𝑛 =· 𝑈 𝑛−1 + 𝑈 𝑛−2 + 1, où
+    # 𝑈 0 = 𝑈 1 = 1.
 
-#     def :
+    def U(n:int)->int:
+        result=(0)                      # Initialisation du résultat
+        if (n==0 or n==1):
+            result=(1)
+        else:
+            result=result+(U(n-1)+U(n-2)+1)
 
+        return result
+
+    result=U(2)
+    print(result)
+    
+# def question7():
+
+#     # Ecrire un algorithme pour savoir si un nombre appartient aux suite de Fibonacci ou non
+
+#     def test_Fibonnaci(nombre:int)->bool:
+        
+#         while (nombre <= U(i)):
 #         return result
 
-#     print(result)
-
 def main():
-    question1()
+    question6()
     return 0
 
 if (__name__ == '__main__'):
