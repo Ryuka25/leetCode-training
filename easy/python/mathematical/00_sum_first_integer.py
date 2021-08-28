@@ -1,21 +1,40 @@
 #!/usr/bin/env python
 
 import math
+from typing import Counter
 
 def question1():
     
     # Ecrire un algorithme qui calcule la somme de n premiers entiers.
 
-    def npremier(nombre:int)-> list:
-        result = [1] # Le premier nombre premier est 1 est non pas 0
-        for i in range(1,nombre):
-            actual = i
-            result.append(actual + (i+1))
+    def test_nombre_premier(nombre:int)->bool:
+        if (nombre==1):
+            result= True
+        else:
+            for i in range(2,nombre+1):
+                if (nombre%i==0):
+                    if (nombre==i):
+                        result=True
+                    else: 
+                        result=False
+                    break # le premier test suffit pour le test
+        
+        return result
+
+    def n_nombre_premier(limit:int)-> list:
+        result=[]
+
+        i=1
+        while (len(result) < limit):
+            if (test_nombre_premier(i)):
+                result.append(i)
+
+            i+=1
 
         return result
 
-    result = npremier(5)
-    print(result)
+    result = (sum(n_nombre_premier(5)))
+    print(f"sum({n_nombre_premier(5)} = {result}")
 
 def question2():
 
@@ -85,8 +104,18 @@ def question5():
     result = U(1)
     print(result)
 
+# def question6():
+
+#     #
+
+#     def :
+
+#         return result
+
+#     print(result)
+
 def main():
-    question5()
+    question1()
     return 0
 
 if (__name__ == '__main__'):
