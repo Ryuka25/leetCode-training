@@ -14,3 +14,16 @@ def tableMultiplication(base:int,start:int=0,stop:int=10):
         result += f"\n\t{base} * {i}\t= {base*i}"
     
     return result
+
+def tableConversion(start:float,end:float):
+    """
+    Écrivez un programme qui affiche une table de conversion de sommes d’argent 
+    exprimées en euros, en dollars canadiens.
+    La progression des sommes de la table sera « géométrique »
+    """
+
+    result = []
+    for i in range(start,end):
+        result.append(f"{i} euro(s) = {i*1.65:.2f} dollar(s)")
+
+    return result
