@@ -47,3 +47,12 @@ def triplement():
         result.append(U(i))
 
     return result
+
+def volumePara(largeur,hauteur,profondeur):
+    """
+    Écrivez un programme qui calcule le volume d’un parallélépipède rectangle
+    dont sont fournis au départ la largeur, la hauteur et la profondeur.
+    """
+    result = (largeur*hauteur*profondeur)
+
+    return result
