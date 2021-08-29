@@ -56,3 +56,20 @@ def volumePara(largeur,hauteur,profondeur):
     result = (largeur*hauteur*profondeur)
 
     return result
+
+def convertisseur(seconde:int):
+    """
+    Écrivez un programme qui convertit un nombre entier de secondes
+    fourni au départ en un nombre d’années, de mois, de jours, de minutes et de secondes
+    (utilisez l’opérateur modulo : %).
+    """
+    annees,     resteAnnees     = seconde//31104000,    (seconde%31104000)     # 31104000s = 259200h   = 360j  = 12mois = 1an
+    mois,       resteMois       = resteAnnees//2592000, (resteAnnees%2592000)  # 2592000s  = 720h      = 30j   = 1mois
+    jours,      resteJours      = resteMois//86400,     (resteMois%86400)      # 86400s    = 24h       = 1j
+    heures,     resteHeures     = resteJours//3600,     (resteJours%3600)      # 3600s     = 1h
+    minutes,    resteMinutes    = resteHeures//60,      (resteHeures%60)       # 60s
+    secondes                    = resteMinutes                                 #
+
+    result = [annees, mois, jours, heures, minutes, secondes]
+
+    return result
