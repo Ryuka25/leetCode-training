@@ -57,7 +57,7 @@ def volumePara(largeur,hauteur,profondeur):
 
     return result
 
-def convertisseur(seconde:int):
+def timeConverter(seconde:int):
     """
     Écrivez un programme qui convertit un nombre entier de secondes
     fourni au départ en un nombre d’années, de mois, de jours, de minutes et de secondes
@@ -71,5 +71,20 @@ def convertisseur(seconde:int):
     secondes                    = resteMinutes                                 #
 
     result = [annees, mois, jours, heures, minutes, secondes]
+
+    return result
+
+def tableAsterix(base=7, multiple=3, start=0, stop=20):
+    """
+    Écrivez un programme qui affiche les 20 premiers termes de la table de multiplication par 7, en
+    signalant au passage (à l’aide d’une astérisque) ceux qui sont des multiples de 3.
+    """
+    result=[]
+
+    for i in range(start, stop):
+        temp = f"{(i*base)}"
+        if ((i*base)%multiple==0):
+            temp = f"{temp}*"
+        result.append(temp)
 
     return result
