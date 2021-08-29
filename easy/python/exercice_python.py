@@ -88,3 +88,17 @@ def tableAsterix(base=7, multiple=3, start=0, stop=20):
         result.append(temp)
 
     return result
+
+def tableSeulement(base=13, multiple=7, start=0, stop=50):
+    """
+    Écrivez un programme qui calcule les 50 premiers termes de la table de multiplication par 13,
+    mais n’affiche que ceux qui sont des multiples de 7.
+    """
+    result = []
+
+    for i in range(start, stop):
+        temp = i*base
+        if (temp%multiple == 0):
+            result.append(temp)
+    
+    return result
