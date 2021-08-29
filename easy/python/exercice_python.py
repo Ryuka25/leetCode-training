@@ -27,3 +27,23 @@ def tableConversion(start:float,end:float):
         result.append(f"{i} euro(s) = {i*1.65:.2f} dollar(s)")
 
     return result
+
+def triplement():
+    """
+    Écrivez un programme qui affiche une suite de 12 nombres
+    dont chaque terme soit égal au triple du terme précédent.
+    """
+
+    def U(n):
+        if (n==0):
+            result = 1
+        else:
+            result = U(n-1)*3
+        
+        return result
+    
+    result = []
+    for i in range(12):
+        result.append(U(i))
+
+    return result
