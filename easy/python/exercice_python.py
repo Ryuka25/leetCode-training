@@ -102,3 +102,26 @@ def tableSeulement(base=13, multiple=7, start=0, stop=50):
             result.append(temp)
     
     return result
+
+def pyramideAsterix(string="*",start=0,stop=7):
+    """
+    Écrivez un programme qui affiche la suite de symboles suivante :
+
+    *
+    **
+    ***
+    ****
+    *****
+    ******
+    *******
+    """
+
+    result = ""
+
+    for i in range(start, stop):
+        temp = ""
+        for i in range(i+1):
+            temp += string
+        result = f"{result}\n{temp}"
+
+    return result
