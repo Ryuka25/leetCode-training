@@ -35,14 +35,36 @@ def twoSum(nums, target):
     except:
         print("[!] Excepted error happen !")
 
-def main():
-    print("This programmes return the index of the two numbers in the nums's list where sum == target")
-    print("e.g:twoSum([1,2,4], 3) will return the list [0,1]\ncause (nums[0] + nums[1]) == 3\n")
+class programsBanner:
+
+    """
+    Banner of this programms!
+    """
+
+    content = """
+    This programmes return the index of the two numbers in the nums's list where sum == target"
+    e.g:twoSum([1,2,4], 3) will return the list [0,1]
+    cause (nums[0] + nums[1]) == 3
     
-    print('[?] Choose on the the sample to test:')
-    print('\t1 - nums = [4,5,3,2], target = 8')
-    print('\t2 - nums = [2,4,6,7,1], target = 7')
-    print('\t3 - nums = [1,2,3], target = 3')
+    [?] Choose on the the sample to test:
+        1 - nums = [4,5,3,2], target = 8
+        2 - nums = [2,4,6,7,1], target = 7
+        3 - nums = [1,2,3], target = 3
+    """
+
+    def __init__(self):
+        pass
+
+    def show(self):
+        "Show this banner!"
+
+        print(self.content)
+        return 0
+
+def main():
+
+    banner = programsBanner()
+    banner.show()
     
     choosing = True
     while choosing:
