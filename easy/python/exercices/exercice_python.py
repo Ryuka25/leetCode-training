@@ -63,16 +63,36 @@ def timeConverter(seconde:int):
     fourni au départ en un nombre d’années, de mois, de jours, de minutes et de secondes
     (utilisez l’opérateur modulo : %).
     """
-    annees,     resteAnnees     = seconde//31104000,    (seconde%31104000)     # 31104000s = 259200h   = 360j  = 12mois = 1an
-    mois,       resteMois       = resteAnnees//2592000, (resteAnnees%2592000)  # 2592000s  = 720h      = 30j   = 1mois
-    jours,      resteJours      = resteMois//86400,     (resteMois%86400)      # 86400s    = 24h       = 1j
-    heures,     resteHeures     = resteJours//3600,     (resteJours%3600)      # 3600s     = 1h
-    minutes,    resteMinutes    = resteHeures//60,      (resteHeures%60)       # 60s
-    secondes                    = resteMinutes                                 #
+    #     annees,     resteAnnees     = seconde//31104000,    (seconde%31104000)     # 31104000s = 259200h   = 360j  = 12mois = 1an
+    #     mois,       resteMois       = resteAnnees//2592000, (resteAnnees%2592000)  # 2592000s  = 720h      = 30j   = 1mois
+    #     jours,      resteJours      = resteMois//86400,     (resteMois%86400)      # 86400s    = 24h       = 1j
+    #     heures,     resteHeures     = resteJours//3600,     (resteJours%3600)      # 3600s     = 1h
+    #     minutes,    resteMinutes    = resteHeures//60,      (resteHeures%60)       # 60s
+    #     secondes                    = resteMinutes                                 #
 
-    result = [annees, mois, jours, heures, minutes, secondes]
+    #     result = [annees, mois, jours, heures, minutes, secondes]
 
-    return result
+    #     return result
+    pass
+
+def correction_timeConverter(nsd):
+    """
+    Écrivez un programme qui convertit un nombre entier de secondes
+    fourni au départ en un nombre d’années, de mois, de jours, de minutes et de secondes
+    (utilisez l’opérateur modulo : %).
+    """
+    #     nsph = 3600                 # nbSecondeParHeure
+    #     nspj = nsph * 24            # nbSecondeParJour
+    #     nspm = nspj * 30            # nbSecondeParMoi
+    #     nspa = nspj * 365           # nbSecondeParAn
+
+    #     na = nsd // nspa
+    #     nsr = nsd % nspa 
+
+    #     return f"seconde = {nsd} vaut {nsr} et {na} an(s)"
+    pass
+
+# print(correction_timeConverter(3656565621))
 
 def tableAsterix(base=7, multiple=3, start=0, stop=20):
     """
@@ -125,3 +145,25 @@ def pyramideAsterix(string="*",start=0,stop=7):
         result = f"{result}\n{temp}"
 
     return result
+
+def convertisseurRadDeg(angleRad):
+    """
+    Écrivez un programme qui convertisse en radians 
+    un angle fourni au départ en degrés,minutes,secondes.
+    """
+    angle = {
+        "radian":0.01745,
+        "degre":1.0,
+        "minute":60,
+        "seconde": 3600
+    }
+
+    #     angleDegre= (angleRad//angle["radian"])
+
+    #     angleMinute, reste_angleMinute = (angleRad*angle["minute"]//angle["radian"])//60, (angleRad*angle["minute"]//angle["radian"])%60
+    #     angleSeconde = reste_angleMinute
+        
+    #     return [angleRad, angleDegre,angleMinute, angleSeconde]
+    pass
+
+# print(convertisseurRadDeg(1))
