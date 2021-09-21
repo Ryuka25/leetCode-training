@@ -1,8 +1,7 @@
 #!/usr/env/ python
 
 from flask import *
-from flask.json import dump, dumps
-from werkzeug.utils import HTMLBuilder
+from models.User import *
 
 app = Flask(__name__)
 
@@ -19,29 +18,17 @@ def table(number):
     
     return html
 
-@app.route('/postvar')
-def postvar():
-    return dumps(request.form())
-
-@app.route('/loginAction')
+@app.route('/loginAction', methods=['POST'])
 def login():
 
-    def checkMatch(userLogin, userPassword):
-        result = False
-        if (userLogin == "test"):
-            if (userPassword == "test"):
-                result = True
-
-        return result
-
-    userLogin = request.form('userLogin')
-    userPassword = request.form('userPassword')
-    if (checkMatch(userLogin, userPassword)):
-        page = render_template('home.html')
+    inputUsername = request.form['userLogin']
+    inputPassword = request.form['userPassword']
+    if (User.checkMatch(inputUsername, inputPassword)):
+        html = render_template('home.html')
     else:
-        page = render_template('login.html')
+        html = render_template('loginError.html')
 
-    return f"{userLogin}, {userPassword}"
+    return html;
 
 if __name__ == '__main__':
     app.run(debug= True)
