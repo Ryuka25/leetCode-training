@@ -3,22 +3,21 @@
 
 void question1() {
 
-    printf("Au revoir !");
-    /* Ecrit au revoir à l'écran */
+    puts("Au revoir "); /* Affiche Au revoir */
+    getchar ();
 
     return;
 }
 
 void question2() {
 
-    printf("Salut toi, appuie sur une touche s'il te plait");
-    /* Ecrit le texte sur l'écran */
+    puts ("Salut toi, appuie sur une touche s’il te plaît");
+    /* Affiche le message Salut toi, ... s’il te plaît */
 
-    getchar();
-    /* Attente d'une touche pour continuer */
+    getchar (); /* Attend la frappe d’une touche */
 
-    printf("Merci d'avoir appuyée sur une touche");
-    /* Ecrit le texte de rémerciement */
+    puts ("Merci d’avoir appuyé sur une touche");
+    /* Affiche le message Merci d’avoir appuyé sur une touche */
 
     return;
 }
@@ -29,8 +28,10 @@ void question3() {
 }
 
 void question4() {
-    printf("Hamlet says To be or not to be, that is the question");
 
+    puts ("Hamlet says To be or not to be, that is the question.");
+    
+    getchar();
     return;
 }
 
