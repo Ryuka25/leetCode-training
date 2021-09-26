@@ -21,3 +21,29 @@ int main() {
     getchar();
     return 0;
 }
+/* 
+#include <stdio.h>
+
+int main ()
+{
+    char a,b,c,d,e,f;
+
+    a='c';
+    b='o';
+    c='u';
+    d='C';
+    e='O';
+    f='U';
+
+    printf("a vaut %c.\n",a);
+    printf("b vaut %c.\n",b);
+    printf("c vaut %c.\n",c);
+    printf("d vaut %c.\n",d);
+    printf("e vaut %c.\n",e);
+    printf("f vaut %c.\n",f);
+    printf("a, b, c, d, e, f valent : %c, %c, %c, %c, %c, %c.\n",a,b,c,d,e,f);
+
+    getchar();
+    return (0);
+}
+ */

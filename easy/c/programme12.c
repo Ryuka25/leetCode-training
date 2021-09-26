@@ -21,3 +21,32 @@ int main() {
     getchar();
     return 0;
 }
+
+// int main() {
+
+//     char car = 'C';
+//     int nbre = 17;
+    
+//     printf ("%c",car);
+
+//     car = 'o';
+//     printf ("%c",car);
+
+//     car = 'u';
+//     printf ("%c",car);
+
+//     car = 'c';
+//     printf ("%c",car);
+
+//     car = 'o';
+//     printf ("%c",car);
+
+//     car = 'u';
+//     printf ("%c",car);
+
+//     printf ("\n%d\n",nbre);
+
+//     /* Attente */
+//     getchar();
+//     return (0);
+// }
