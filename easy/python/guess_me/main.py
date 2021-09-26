@@ -1,6 +1,5 @@
 from random import randint
-
-print("\n🤨️ GUESS ME - Challenge ⁉️\n")
+import os
 
 class Player :
     " Handle the Player "
@@ -19,6 +18,12 @@ class Player :
 run = True
 
 while run:
+    os.system("clear")
+
+    print("\n\t\t🤨️ GUESS ME - Challenge ⁉️\n")
+
+    print("\n\t=============[BEGIN GAME]=============\n\n")
+
     ################################
     #        INITIALIZATION        #
     ################################
@@ -51,12 +56,12 @@ while run:
         while (player.life != 0):
 
             # Show current player life / attempt
-            print(f"{player.name} Life = ", end="")
+            print(f"\n{player.name} Life = ", end="")
             for i in range(player.life):
                 print("❤️ ", end="")
 
             # GET USER INPUT
-            userIn = int(input(f"\n\n[?]  Input your number here : "))
+            userIn = int(input(f"\n[?]  Input your number here : "))
 
             # TEST USER INPUT
             if (userIn == target):
@@ -89,8 +94,8 @@ while run:
         # Store the curent player score in the score list:
         scoreList.append(player.getScore())
 
-        print("\n\nThe player {} score is {}".format(player.name, player.getScore()))
-        print("\n\n=============[END OF THE CURENT SET]=============\n\n")
+        print("\n\n\t\tThe player {} score is {}".format(player.name, player.getScore()))
+        print("\n\t=============[END OF THE CURENT SET]=============\n")
 
     # Handle the winner at the end of the set
 
@@ -108,7 +113,7 @@ while run:
     else:
         winner = Player("none ! We haven't handle this number of player before!")
 
-    print(f"\n 🏆️ The winner is {winner.name()}")
+    print(f"\n 🏆️ The winner is {winner.name}")
 
     reRun = str(input('\nWould you like to reRun the game ? (y/n) > '))
 
@@ -117,4 +122,5 @@ while run:
     elif reRun == 'n': 
         run = False
 
-print("SEE YOU SOON")
+os.system("clear")
+print("\n... You just exit the GUESS ME CHALLENGE ...")
