@@ -24,7 +24,11 @@ def login():
     inputUsername = request.form['userLogin']
     inputPassword = request.form['userPassword']
     if (User.checkMatch(inputUsername, inputPassword)):
-        html = render_template('home.html')
+        user = User.getUserByUsername(inputUsername);
+        page = {
+            'title':'Homepage'
+        }
+        html = render_template('home.html', user = user, page = page)
     else:
         html = render_template('loginError.html')
 
