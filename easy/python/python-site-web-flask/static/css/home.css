@@ -1,0 +1,17 @@
+html {
+    background-color:black;
+    color: white;
+}
+
+label {
+    display: inline-block;
+    width: 5em;
+    padding: 3em;
+}
+
+.form-group {
+    background-color: grey;
+    color: white;
+    margin: 2em;
+    
+}
