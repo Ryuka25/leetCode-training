@@ -16,7 +16,7 @@ class User :
     def getUsername(self):
         return self.__username
 
-    def __getPassword(self):
+    def getPassword(self):
         return self.__password
 
     def getEmail(self):
@@ -27,36 +27,29 @@ class User :
 
     def getAllUser():
         "Retourne une liste contenant tout les utilisateurs"
-        stmt = Database.getInstance()
+        stmt = Database.getCursor()
         sql = "SELECT * FROM users"
         stmt.execute(sql)
 
         userList = []
+        allUserData = stmt.fetchall()
 
-        for userData in stmt:
+        for userData in allUserData:
             userList.append(User(userData))
 
         return userList
-
-    def getUserByID(id):
-        "Retourne l'utilisateur dont l'ID est spécifiée!"
-        users = User.getAllUser()
-        for user in users:
-            if str(user.getId() == str(id)):
-                return user
-        
-        return 0
     
     def getUserByUsername(username):
         "Retourne l'utilisateur dont l'username est spécifiée!"
-        users = User.getAllUser()
-        username = User.normalize(username)
-        for user in users:
-            currentUsername = User.normalize(user.getUsername())
-            if  currentUsername == username:
-                return user
-            
-        return 0
+
+        myCursor = Database.getCursor()
+        sql = "SELECT * FROM users WHERE username = '%s' ;" %username
+        myCursor.execute(sql)
+        myResult = myCursor.fetchone()
+        
+        user = User(myResult)
+
+        return user        
 
     def checkMatch(inputUsername:str, inputPassword:str):
         "Test si le nom d'utilisateur donée en paramètre correspond au mot de passe entrée!"
@@ -64,7 +57,7 @@ class User :
         if (testedUser == 0):
             result = False
         else:
-            if (testedUser.__getPassword() == inputPassword):
+            if (testedUser.getPassword() == inputPassword):
                 result = True
             else:
                 result = False
