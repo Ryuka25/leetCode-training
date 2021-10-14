@@ -1,0 +1,39 @@
+    // === [ POINT D'ENTRÉE DU PROGRAMME ] === //
+START:
+    // Opérande * Multiplicateur= Résultat
+    // Déclaration Opérande
+    INP R3, 2
+    // Déclaration Multiplicateur
+    INP R2, 2
+    // Déclaration Résultat
+    MOV R4, #0
+    
+    // Jump vers la section Multiplication
+    B MULTIPLICATION
+CONTINUE_MULTIPLICATION:
+    OUT R4,4
+    HALT
+
+MULTIPLICATION:
+    // === [ SECTION POUR LOOP_1 ] === //
+    // Déclaration index
+    MOV R12, #0
+CONDITION_LOOP_1:
+    // Condition d'arret du boucle
+    CMP R2, R12
+    BEQ END_LOOP_1
+BEGIN_LOOP_1:
+    // Modifie la valeur du résultat
+    ADD R4,R4,R3
+    // Incrémente l'index
+    ADD R12, R12, #1
+    // Jump vers le condition du boucle
+    B CONDITION_LOOP_1
+END_LOOP_1:
+    B CONTINUE_MULTIPLICATION
+
+    
+    
+ 
+    
+    
